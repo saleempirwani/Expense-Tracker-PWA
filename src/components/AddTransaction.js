@@ -7,20 +7,27 @@ export const AddTransaction = () => {
 
     const [text, setText] = useState('')
     const [amount, setAmount] = useState(0)
+    const [id, setId] = useState(0)
 
     const onSubmit = e => {
         e.preventDefault()
 
-        const newTransaction = {
-            id: Math.floor(Math.random() * 10000000),
-            text,
-            amount: +amount
+        if (text.trim() !== '' && +amount !== 0) {
+            const newTransaction = {
+                id: id,  //Math.floor(Math.random() * 10000000),
+                text,
+                amount: +amount
+            }
+
+            addTransaction(newTransaction)
+
+            setId(id + 1)
+            setText('')
+            setAmount(0)
         }
-
-        addTransaction(newTransaction)
-
-        setText('')
-        setAmount(0)
+        else{
+            alert('Kindly! Enter a amount or text...')
+        }
     }
 
     return (
@@ -29,14 +36,14 @@ export const AddTransaction = () => {
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="text">Text</label>
-                    <input type="text" value={text} onChange={ (e) => setText(e.target.value)} id="text" placeholder="Enter text..." />
+                    <input type="text" value={text} onChange={(e) => setText(e.target.value)} id="text" placeholder="Enter text..." />
                 </div>
                 <div className="form-control">
                     <label htmlFor="amount"
                     >Amount <br />
             (negative - expense, positive - income)</label
                     >
-                    <input type="number" value={amount} onChange={ (e) => setAmount(e.target.value)} id="amount" placeholder="Enter amount..." />
+                    <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} id="amount" placeholder="Enter amount..." />
                 </div>
                 <button className="btn">Add transaction</button>
             </form>
