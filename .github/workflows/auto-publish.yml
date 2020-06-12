@@ -34,7 +34,7 @@ jobs:
       run: npm install -g surge    
     
     - name: Deploying Surge...
-      run: surge ./build msr-react-app.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build msr-bootcamp2020-expense-tracker.surge.sh --token ${{ secrets.SURGE_TOKEN }}
      
      
      
