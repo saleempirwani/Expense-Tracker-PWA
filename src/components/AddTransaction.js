@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { Button } from '@material-ui/core'
 import { GlobalContext } from '../context/GlobalState'
 
 export const AddTransaction = () => {
@@ -25,7 +26,7 @@ export const AddTransaction = () => {
             setText('')
             setAmount(0)
         }
-        else{
+        else {
             alert('Kindly! Enter a amount or text...')
         }
     }
@@ -41,8 +42,7 @@ export const AddTransaction = () => {
                 <div className="form-control">
                     <label htmlFor="amount"
                     >Amount <br />
-            (negative - expense, positive - income)</label
-                    >
+            (negative - expense, positive - income)</label>
                     <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} id="amount" placeholder="Enter amount..." />
                 </div>
                 <button className="btn">Add transaction</button>
