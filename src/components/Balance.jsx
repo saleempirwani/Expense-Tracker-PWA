@@ -12,9 +12,9 @@ export const Balance = () => {
     }
 
     return (
-        <div className="bal-container">
+        <div className="bg-info text-white p-3 rounded">
             <h4>Your Balance</h4>
-            <h1>${total}</h1>
+            <h5 className="mt-3">${total}</h5>
 
         </div>
     )
