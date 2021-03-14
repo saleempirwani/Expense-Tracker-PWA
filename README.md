@@ -13,7 +13,7 @@ Live Site: https://selim-expense-tracker-app.netlify.app/
 **Run Application**
 
 ```
-cd Expense-Tracker-App
+cd Expense-Tracker-PWA
 npm install
 npm start
 ```
