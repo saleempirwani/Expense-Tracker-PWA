@@ -1,4 +1,4 @@
-# Expense Tracker App (REACTJS and PWA)
+# Expense Tracker PWA (REACTJS)
 
 Live Site: https://selim-expense-tracker-app.netlify.app/
 
